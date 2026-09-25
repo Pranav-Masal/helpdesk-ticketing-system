@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agent Registration — HelpDesk Pro</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-shell">
+
+        <a class="brand auth-brand" href="index.html">
+            HelpDesk<span>Pro</span>
+        </a>
+
+        <section class="auth-card">
+
+            <span class="eyebrow">JOIN SUPPORT TEAM</span>
+
+            <h1>Agent Registration</h1>
+
+            <p class="muted">
+                Create your support agent account.
+            </p>
+
+            <form id="agentRegisterForm">
+
+                <label>
+                    Username
+                    <input
+                        id="username"
+                        type="text"
+                        required
+                        minlength="3"
+                    >
+                </label>
+
+                <label>
+                    Email
+                    <input
+                        id="email"
+                        type="email"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Password
+                    <input
+                        id="password"
+                        type="password"
+                        required
+                        minlength="8"
+                    >
+                </label>
+
+                <div id="message" class="message"></div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-full"
+                >
+                    Register as Agent
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a href="login.html">Sign in</a>
+            </p>
+
+            <p class="auth-switch">
+                Want a customer account?
+                <a href="register.html">Customer Registration</a>
+            </p>
+
+        </section>
+
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/agent-register.js"></script>
+
+</body>
+</html>

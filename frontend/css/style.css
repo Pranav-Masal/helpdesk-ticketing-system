@@ -1,0 +1,1172 @@
+/* =========================================================
+   HELP DESK PRO
+   GLOBAL / COMMON STYLES
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+
+    --text: #172033;
+    --muted: #697386;
+
+    --primary: #315efb;
+    --primary2: #244bd0;
+
+    --border: #e6eaf0;
+
+    --danger: #dc3545;
+    --success: #16845b;
+    --warning: #b77900;
+
+    --shadow:
+        0 18px 50px rgba(24, 39, 75, 0.08);
+
+    --shadow-sm:
+        0 8px 25px rgba(24, 39, 75, 0.06);
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   COMMON NAVBAR / TOPBAR
+   ========================================================= */
+
+.navbar,
+.topbar {
+    min-height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 50;
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 23px;
+    font-weight: 850;
+
+    letter-spacing: -0.7px;
+
+    white-space: nowrap;
+}
+
+.brand span {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   USER MENU
+   ========================================================= */
+
+.user-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.user-menu strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BUTTON SYSTEM
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 42px;
+
+    border: 0;
+    border-radius: 11px;
+
+    padding: 11px 18px;
+
+    font-size: 14px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Primary */
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(49, 94, 251, 0.18);
+}
+
+.btn-primary:hover {
+    background: var(--primary2);
+
+    box-shadow:
+        0 10px 24px rgba(49, 94, 251, 0.25);
+}
+
+
+/* Outline */
+
+.btn-outline {
+    background: #ffffff;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: #cbd3df;
+    background: #f8fafc;
+}
+
+
+/* Ghost */
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text);
+}
+
+.btn-ghost:hover {
+    background: #f1f5f9;
+}
+
+
+/* Success */
+
+.btn-success {
+    background: #eaf8f1;
+    color: var(--success);
+
+    border: 1px solid #c9efdc;
+}
+
+.btn-success:hover {
+    background: #dff5e9;
+}
+
+
+/* Danger */
+
+.btn-danger {
+    background: #fff1f2;
+    color: var(--danger);
+
+    border: 1px solid #fecdd3;
+}
+
+.btn-danger:hover {
+    background: #ffe4e6;
+}
+
+
+/* Sizes */
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-lg {
+    min-height: 48px;
+    padding: 14px 22px;
+}
+
+
+/* =========================================================
+   TEXT UTILITIES
+   ========================================================= */
+
+.eyebrow {
+    display: inline-block;
+
+    font-size: 11px;
+    font-weight: 850;
+
+    letter-spacing: 1.8px;
+
+    color: var(--primary);
+}
+
+.muted {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 28px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background: #eef2ff;
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 560px;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 70px 10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f3f6ff
+        );
+}
+
+.hero h1 {
+    margin: 16px 0;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            78px
+        );
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 560px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   HERO CARD
+   ========================================================= */
+
+.hero-card {
+    width: 100%;
+    max-width: 470px;
+
+    justify-self: end;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    box-shadow: var(--shadow);
+}
+
+.mock-top {
+    display: flex;
+    gap: 6px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.mock-top i {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #d8dde7;
+}
+
+.hero-card .big {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 48px;
+}
+
+.green {
+    color: var(--success);
+}
+
+.mock-ticket {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 5px;
+
+    border-top: 1px solid var(--border);
+}
+
+.mock-ticket div {
+    flex: 1;
+}
+
+.mock-ticket small {
+    display: block;
+
+    color: var(--muted);
+}
+
+.mock-ticket em {
+    font-style: normal;
+
+    padding: 6px 9px;
+
+    border-radius: 99px;
+
+    background: #eef2ff;
+    color: var(--primary);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: var(--border);
+}
+
+.features article {
+    min-height: 190px;
+
+    padding: 42px 10%;
+
+    background: #ffffff;
+}
+
+.features article > b {
+    color: var(--primary);
+}
+
+.features h3 {
+    margin: 12px 0 8px;
+}
+
+.features p {
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+label {
+    display: block;
+
+    margin: 16px 0;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding: 12px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9aa3b2;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(49, 94, 251, 0.10);
+}
+
+textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message {
+    min-height: 20px;
+
+    margin: 8px 0;
+
+    font-size: 13px;
+}
+
+.message.error {
+    color: var(--danger);
+}
+
+.message.success {
+    color: var(--success);
+}
+
+
+/* =========================================================
+   COMMON MAIN CONTAINERS
+   ========================================================= */
+
+.main {
+    width: min(1200px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 40px 0 70px;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+.section-head h2 {
+    margin: 0;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    margin: 7px 0;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            2.8rem
+        );
+
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.panel {
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 14px;
+}
+
+.stat-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.stat-value {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TICKET ROW — COMMON
+   ========================================================= */
+
+.ticket-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding: 17px 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.2s ease;
+}
+
+.ticket-row:last-child {
+    border-bottom: 0;
+}
+
+.ticket-row:hover {
+    background: #f8fafc;
+}
+
+.ticket-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.ticket-info strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+}
+
+.ticket-info small {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   AUTH COMMON
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #eef2ff,
+            transparent 35%
+        ),
+        var(--bg);
+}
+
+.auth-shell {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-brand {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 22px;
+}
+
+.auth-card {
+    padding: 32px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(12px);
+}
+
+.auth-card h1 {
+    margin: 8px 0;
+
+    font-size: 28px;
+
+    letter-spacing: -0.7px;
+}
+
+.auth-switch {
+    margin: 16px 0 0;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.auth-switch a {
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 55px 7%;
+    }
+
+    .hero-card {
+        justify-self: stretch;
+
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar,
+    .topbar {
+        min-height: 66px;
+
+        padding: 0 4%;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .user-menu {
+        gap: 7px;
+    }
+
+    .user-menu strong {
+        display: none;
+    }
+
+    .main {
+        width: calc(100% - 24px);
+
+        padding-top: 28px;
+    }
+
+    .welcome {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .welcome .btn {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .section-head {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2.5px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .navbar,
+    .topbar {
+        padding: 0 3%;
+    }
+
+    .btn {
+        padding: 10px 14px;
+
+        font-size: 13px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 16px;
+    }
+
+    .ticket-row .badge {
+        align-self: flex-start;
+    }
+
+    .auth-page {
+        padding: 20px 12px;
+    }
+
+    .auth-card {
+        padding: 22px 17px;
+    }
+}
+
+
+/* =========================================================
+   SOFT GLASS BLUR — COMMON
+   Existing colors unchanged
+   ========================================================= */
+
+.navbar,
+.topbar {
+    background: rgba(255, 255, 255, 0.78);
+    border-bottom: 1px solid rgba(230, 234, 240, 0.85);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 8px 30px rgba(24, 39, 75, 0.05);
+}
+
+
+/* =========================================================
+   GLASS BUTTON
+   ========================================================= */
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   GLASS HERO CARD
+   ========================================================= */
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(230, 234, 240, 0.85);
+
+    box-shadow:
+        0 18px 50px rgba(24, 39, 75, 0.10);
+}
+
+
+/* =========================================================
+   GLASS PANELS
+   ========================================================= */
+
+.panel {
+    background: rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(230, 234, 240, 0.85);
+
+    box-shadow:
+        0 12px 35px rgba(24, 39, 75, 0.07);
+}
+
+
+/* =========================================================
+   GLASS STAT CARDS
+   ========================================================= */
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(230, 234, 240, 0.85);
+
+    box-shadow:
+        0 10px 30px rgba(24, 39, 75, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(24, 39, 75, 0.10);
+}
+
+
+/* =========================================================
+   GLASS AUTH CARD
+   ========================================================= */
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.74);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(230, 234, 240, 0.85);
+
+    box-shadow:
+        0 18px 50px rgba(24, 39, 75, 0.09);
+}
+
+
+/* =========================================================
+   GLASS FORM INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   GLASS TICKET ROW
+   ========================================================= */
+
+.ticket-row {
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ticket-row:hover {
+    background: rgba(248, 250, 252, 0.82);
+}
+
+
+/* =========================================================
+   GLASS EFFECT — MOBILE SAFE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar,
+    .topbar {
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+
+    .hero-card,
+    .panel,
+    .stat-card,
+    .auth-card {
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+}
+
+
+
+

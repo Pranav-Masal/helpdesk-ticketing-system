@@ -1,0 +1,44 @@
+services:
+
+  db:
+    image: postgres:18
+    container_name: helpdesk_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: helpdesk_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+
+  web:
+    build: .
+    container_name: helpdesk_api
+
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+    environment:
+      SECRET_KEY: docker-secret-key
+      DEBUG: "True"
+
+      POSTGRES_DB: helpdesk_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - db
+
+
+volumes:
+  postgres_data:

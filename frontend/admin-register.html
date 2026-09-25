@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Registration — HelpDesk Pro</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/auth.css"
+    >
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <div class="auth-shell">
+
+
+        <!-- BRAND -->
+
+        <a
+            class="brand auth-brand"
+            href="index.html"
+        >
+            HelpDesk<span>Pro</span>
+        </a>
+
+
+        <!-- CARD -->
+
+        <section class="auth-card">
+
+
+            <span class="eyebrow">
+                ADMINISTRATION
+            </span>
+
+
+            <h1>
+                Admin Registration
+            </h1>
+
+
+            <p class="muted">
+                Create an administrator account for
+                HelpDesk Pro.
+            </p>
+
+
+            <!-- FORM -->
+
+            <form id="adminRegisterForm">
+
+
+                <!-- USERNAME -->
+
+                <label>
+
+                    Username
+
+                    <input
+                        id="username"
+                        type="text"
+                        placeholder="Enter admin username"
+                        minlength="3"
+                        maxlength="150"
+                        autocomplete="username"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- EMAIL -->
+
+                <label>
+
+                    Email
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="admin@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- PASSWORD -->
+
+                <label>
+
+                    Password
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Minimum 8 characters"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <label>
+
+                    Confirm Password
+
+                    <input
+                        id="confirmPassword"
+                        type="password"
+                        placeholder="Confirm your password"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    id="registerButton"
+                    class="btn btn-primary btn-full"
+                >
+                    Create Admin Account
+                </button>
+
+
+            </form>
+
+
+            <!-- LOGIN -->
+
+            <p class="auth-switch">
+
+                Already have an admin account?
+
+                <a href="login.html">
+                    Sign in
+                </a>
+
+            </p>
+
+
+            <!-- OTHER REGISTRATION -->
+
+            <p class="auth-switch">
+
+                Want an agent account?
+
+                <a href="agent-register.html">
+                    Agent Registration
+                </a>
+
+            </p>
+
+
+            <p class="auth-switch">
+
+                Want a customer account?
+
+                <a href="register.html">
+                    Customer Registration
+                </a>
+
+            </p>
+
+
+        </section>
+
+    </div>
+
+
+    <script src="js/config.js"></script>
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/admin-register.js"></script>
+
+
+</body>
+
+</html>

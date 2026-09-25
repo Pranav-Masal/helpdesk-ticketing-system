@@ -1,0 +1,153 @@
+/* =========================================================
+   ADMIN DASHBOARD
+   ========================================================= */
+
+.admin-panel {
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.agent-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    border-bottom:
+        1px solid rgba(230, 234, 240, 0.75);
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.agent-row:last-child {
+    border-bottom: none;
+}
+
+
+.agent-row:hover {
+    background:
+        rgba(255, 255, 255, 0.42);
+}
+
+
+.agent-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+.agent-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 18px rgba(49, 94, 251, 0.18);
+}
+
+
+.agent-info strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+.agent-info small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.agent-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 650px) {
+
+    .agent-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 17px;
+    }
+
+    .agent-actions {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .agent-actions .btn {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .agent-info {
+        width: 100%;
+    }
+
+    .agent-actions {
+        flex-wrap: wrap;
+    }
+
+    .agent-actions .badge {
+        order: 1;
+    }
+
+    .agent-actions .btn {
+        order: 2;
+        width: 100%;
+    }
+}
