@@ -10,9 +10,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
-    ports:
-      - "5432:5432"
-
     volumes:
       - postgres_data:/var/lib/postgresql
 
@@ -22,7 +19,7 @@ services:
     container_name: helpdesk_api
     restart: unless-stopped
 
-    command: sh -c "python manage.py migrate && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+    command: sh -c "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
 
     environment:
       SECRET_KEY: ${SECRET_KEY}
@@ -42,8 +39,8 @@ services:
       SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE}
       CSRF_COOKIE_SECURE: ${CSRF_COOKIE_SECURE}
 
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
 
     depends_on:
       - db
@@ -56,10 +53,13 @@ services:
 
     ports:
       - "80:80"
+      - "443:443"
 
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./backend/staticfiles:/app/staticfiles:ro
+      - ./staticfiles:/app/staticfiles:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
 
     depends_on:
       - web

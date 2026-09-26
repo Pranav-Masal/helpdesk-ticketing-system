@@ -1,8 +1,11 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
+
+from drf_spectacular.utils import extend_schema
 
 from .models import User
 from .serializers import (
@@ -33,6 +36,9 @@ class MeView(APIView):
         permissions.IsAuthenticated
     ]
 
+    @extend_schema(
+        responses=UserSerializer
+    )
     def get(self, request):
         return Response(
             UserSerializer(request.user).data
@@ -46,8 +52,11 @@ class MeView(APIView):
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        request=LoginSerializer,
+        responses=UserSerializer,
+    )
     def post(self, request):
-
         serializer = LoginSerializer(
             data=request.data
         )
@@ -82,5 +91,3 @@ class LoginView(APIView):
 class AgentRegisterView(generics.CreateAPIView):
     serializer_class = AgentRegisterSerializer
     permission_classes = [AllowAny]
-
-
